@@ -53,7 +53,7 @@ setInterval(() => {
 }, 5000);
 
 /* get unique names from data*/
-//getUniqueNames = (dataStore) => [... new Set(dataStore.map((obj)=>obj.name))];
+
 function getUniqueNames(dataStore){
   var uniqueArray = [];
   for(var i=0;i<dataStore.length;i++){
