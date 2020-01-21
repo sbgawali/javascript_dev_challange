@@ -12,7 +12,7 @@ require('./site/style.css')
 // if you want to use es6, you can do something like
 //     require('./es6/myEs6code')
 // here to load the myEs6code.js file, and it will be automatically transpiled.
-require('./es6/myEs6code');
+//require('./es6/myEs6code');
 // Change this to get detailed logging from the stomp library
 global.DEBUG = false
 
@@ -52,6 +52,17 @@ setInterval(() => {
   
 }, 5000);
 
+/* get unique names from data*/
+//getUniqueNames = (dataStore) => [... new Set(dataStore.map((obj)=>obj.name))];
+function getUniqueNames(dataStore){
+  var uniqueArray = [];
+  for(var i=0;i<dataStore.length;i++){
+    if(uniqueArray.indexOf(dataStore[i].name) ==-1){
+      uniqueArray.push(dataStore[i].name);
+    }
+  }
+  return uniqueArray;
+}
 
 function getTableRecord(dataStore) {                     
   var uniqueNames = getUniqueNames(dataStore);          
